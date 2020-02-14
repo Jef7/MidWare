@@ -7,32 +7,45 @@
     <title>MidWare Test - jcamareno</title>
   </head>
   <body>
-    <!-- navbar -->
     <div class="topnav">
       <div class="topnav-child">
-        <img class="logo" src="assets/logo.png" alt="logo-midware.net" />
+        <a href="https://www.midware.net">
+          <img class="logo" src="assets/logo.png" alt="logo-midware.net" />
+        </a>
       </div>
     </div>
-
-    <!-- form -->
-    <div class="progress-container">
-      <div class="column-1">
-        <div>
-          <input
-            type="number"
-            class="form-control"
-            id="qtyControl"
-            placeholder="Progress"
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            class="form-control"
-            id="progressControl"
-            placeholder="Goal"
-          />
-        </div>
+    <h1 class="text-primary">
+      Progress bar calculator
+    </h1>
+    <h4 class="text-secundary">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+      molestie varius est in feugiat. Nunc egestas et quam ut feugiat. In
+      pellentesque, justo a luctus commodo, ipsum augue vestibulum ipsum, eget
+      tempus ipsum libero vitae libero. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit feugiat Lorem ipsum.
+    </h4>
+    <div>
+      <div class="center">
+        <input
+          type="number"
+          class="form-control"
+          id="qtyControl"
+          placeholder="Progress"
+        />
+      </div>
+      <div class="center">
+        <input
+          type="number"
+          class="form-control"
+          id="progressControl"
+          placeholder="Goal"
+        />
+      </div>
+      <div class=" center text-secundary">
+        <input type="checkbox" id="show-bar" name="show-bar" />
+        <label for="show-bar"> Show/Hide Progress Bar</label>
+      </div>
+      <div class="center">
         <button
           class="btn"
           onclick="calculateProgress(document.getElementById('qtyControl'), document.getElementById('progressControl'))"
@@ -40,13 +53,29 @@
           CALCULATE
         </button>
       </div>
-      <div class="column-2">
-        <div class="progress-bar-container">
-          <div id="progress-bar"></div>
-        </div>
+      <div>
+        <h4 class="text-result" id="result"></h4>
+      </div>
+      <div id="container-bar" class="progress-bar-container">
+        <div id="progress-bar"></div>
       </div>
     </div>
-
     <script src="js/progressBar.js"></script>
   </body>
+  <footer>
+    <div class="footer">
+      MidWare Javascript Test by
+      <a class="name" href="https://www.linkedin.com/in/jcamareno7/"
+        >Jeffrey Camareno</a
+      >
+      <a href="https://www.midware.net">
+        <img
+          class="logo-footer"
+          src="assets/logo-white.png"
+          alt="logo-white"
+          align="right"
+        />
+      </a>
+    </div>
+  </footer>
 </html>

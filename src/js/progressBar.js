@@ -1,28 +1,30 @@
 function calculateProgress(progress, goal) {
   let progressValue = progress.value;
   let goalValue = goal.value;
-  let currentProgress = 0;
+  let currentProgressResult = 0;
   const higherLimit = 99.99;
 
   if (!inputEmptyValidator(progress, goal)) {
-    currentProgress = (progressValue / goalValue) * 100;
+    currentProgressResult =
+      Math.round((progressValue / goalValue) * 100 * 100) / 100;
 
-    if (currentProgress >= 100) currentProgress = higherLimit;
+    restultText(currentProgressResult);
+    if (currentProgressResult >= 100) currentProgressResult = higherLimit;
 
-    progressBar(currentProgress);
+    showBarValidator();
+    progressBar(currentProgressResult);
     clearInputs(progress, goal);
   }
 }
 
-// esto se puede mejorar con rest operator
 function clearInputs(input1, input2) {
   input1.value = "";
   input2.value = "";
 }
 
-function progressBar(currentProgress) {
+function progressBar(currentProgressResult) {
   let progressBar = document.getElementById("progress-bar");
-  let quantity = currentProgress;
+  let quantity = currentProgressResult;
   let progress = 0;
 
   while (progress <= quantity) {
@@ -31,25 +33,42 @@ function progressBar(currentProgress) {
   }
 }
 
-function inputEmptyValidator(inputId1, inputId2) {
-  const inputValue1 = inputId1.value;
-  const inputValue2 = inputId2.value;
+function inputEmptyValidator(inputProgress, inputGoal) {
+  const inputProgressValue = inputProgress.value;
+  const inputGoalValue = inputGoal.value;
   const errorStyle = "0.17em solid #DC0015";
-  let errorStatus1 = false;
-  let errorStatus2 = false;
+  let errorStatusProgress = false;
+  let errorStatusGoal = false;
 
-  if (inputValue1 === "") {
-    inputId1.style.border = errorStyle;
-    errorStatus1 = true;
+  if (inputProgressValue === "") {
+    inputProgress.style.border = errorStyle;
+    errorStatusProgress = true;
   } else {
-    inputId1.style.border = "none";
+    inputProgress.style.border = "none";
   }
-  if (inputValue2 === "") {
-    inputId2.style.border = errorStyle;
-    errorStatus2 = true;
+  if (inputGoalValue === "") {
+    inputGoal.style.border = errorStyle;
+    errorStatusGoal = true;
   } else {
-    inputId2.style.border = "none";
+    inputGoal.style.border = "none";
   }
 
-  return errorStatus1 || errorStatus2;
+  return errorStatusProgress || errorStatusGoal;
+}
+
+function showBarValidator() {
+  let checkbox = document.getElementById("show-bar");
+  let barElement = document.getElementById("container-bar").style;
+
+  checkbox.checked
+    ? (barElement.display = "block")
+    : (barElement.display = "none");
+}
+
+function restultText(result) {
+  let resultElement = document.getElementById("result");
+
+  result > 100
+    ? (resultElement.innerHTML = "You Are Awesomme")
+    : (resultElement.innerHTML = result + "%");
 }
