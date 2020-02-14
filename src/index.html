@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>MidWare Test - jcamareno</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="topnav">
+      <div class="topnav-child">
+        <img class="logo" src="assets/logo.png" alt="logo-midware.net" />
+      </div>
+    </div>
+
+    <!-- form -->
+    <div class="progress-container">
+      <div class="column-1">
+        <div>
+          <input
+            type="number"
+            class="form-control"
+            id="qtyControl"
+            placeholder="Progress"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            class="form-control"
+            id="progressControl"
+            placeholder="Goal"
+          />
+        </div>
+        <button
+          class="btn"
+          onclick="calculateProgress(document.getElementById('qtyControl'), document.getElementById('progressControl'))"
+        >
+          CALCULATE
+        </button>
+      </div>
+      <div class="column-2">
+        <div class="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/progressBar.js"></script>
+  </body>
+</html>

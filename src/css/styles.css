@@ -1,0 +1,82 @@
+body {
+  background-color: white;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.topnav {
+  background-color: white;
+  margin-top: 1%;
+}
+
+.topnav-child {
+  background-color: white;
+  margin-left: 12%;
+  width: 20%;
+}
+
+.logo {
+  width: 225px;
+}
+
+.column-1 {
+  margin-top: 10%;
+  float: left;
+  width: 50%;
+  height: 100px;
+  background-color: white;
+}
+
+.column-2 {
+  margin-top: 10%;
+  float: right;
+  width: 50%;
+  height: 100px;
+  background-color: white;
+}
+
+.progress-container:after {
+  display: table;
+  clear: both;
+}
+
+.progress-bar-container {
+  border-radius: 50px;
+  margin-top: 65px;
+  width: 100%;
+  background-color: #005997;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 30px;
+  background-color: #00bcf5;
+  border-radius: 50px;
+}
+
+.btn {
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #00bcf5;
+  color: white;
+  text-decoration: none;
+  border: none;
+  width: 90%;
+  height: 30px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #005997;
+}
+
+.form-control {
+  border-radius: 50px;
+  background-color: #e3f2ff;
+  color: #005997;
+  width: 90%;
+  border: none;
+  height: 30px;
+  text-align: center;
+  margin: 10px;
+}
